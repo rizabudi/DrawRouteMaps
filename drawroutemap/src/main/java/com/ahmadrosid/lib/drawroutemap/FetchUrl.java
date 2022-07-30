@@ -15,7 +15,8 @@ public class FetchUrl {
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
         String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
         String sensor = "sensor=false";
-        String parameters = str_origin + "&" + str_dest + "&" + sensor;
+        String avoid = "avoid=tolls|highways";
+        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + avoid;
         String output = "json";
         return "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
     }
