@@ -18,15 +18,17 @@ public class DrawRouteMaps {
 
     private static DrawRouteMaps instance;
     private Context context;
+    private static String API_KEY="";
 
-    public static DrawRouteMaps getInstance(Context context) {
+    public static DrawRouteMaps getInstance(Context context, String apiKey) {
         instance = new DrawRouteMaps();
         instance.context = context;
+        API_KEY=apiKey;
         return instance;
     }
 
     public DrawRouteMaps draw(LatLng origin, LatLng destination, GoogleMap googleMap){
-        String url_route = FetchUrl.getUrl(origin, destination);
+        String url_route = FetchUrl.getUrl(origin, destination, API_KEY);
         DrawRoute drawRoute = new DrawRoute(googleMap);
         drawRoute.execute(url_route);
         return instance;
