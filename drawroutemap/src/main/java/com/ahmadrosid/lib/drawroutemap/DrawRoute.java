@@ -45,7 +45,7 @@ public class DrawRoute extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        RouteDrawerTask routeDrawerTask = new RouteDrawerTask(mMap);
+        RouteDrawerTask routeDrawerTask = new RouteDrawerTask(mMap,routeColor);
         routeDrawerTask.execute(result);
     }
 
