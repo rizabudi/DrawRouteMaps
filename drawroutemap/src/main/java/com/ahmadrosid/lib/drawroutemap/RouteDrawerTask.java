@@ -84,8 +84,9 @@ public class RouteDrawerTask extends AsyncTask<String, Integer, List<List<HashMa
             }
 
             // Adding all the points in the route to LineOptions
+            lineOptions.color(routeColor);
             lineOptions.addAll(points);
-            lineOptions.width(10);
+            lineOptions.width(12);
         }
 
         // Drawing polyline in the Google Map for the i-th route
