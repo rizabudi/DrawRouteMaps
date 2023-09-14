@@ -1,7 +1,6 @@
 package com.ahmadrosid.lib.drawroutemap;
 
 import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -28,8 +27,9 @@ public class RouteDrawerTask extends AsyncTask<String, Integer, List<List<HashMa
     private GoogleMap mMap;
     private int routeColor;
 
-    public RouteDrawerTask(GoogleMap mMap) {
+    public RouteDrawerTask(GoogleMap mMap, int routeColor) {
         this.mMap = mMap;
+        this.routeColor =routeColor;
     }
 
     @Override
@@ -86,11 +86,6 @@ public class RouteDrawerTask extends AsyncTask<String, Integer, List<List<HashMa
             // Adding all the points in the route to LineOptions
             lineOptions.addAll(points);
             lineOptions.width(10);
-            routeColor = ContextCompat.getColor(DrawRouteMaps.getContext(), R.color.colorRouteLine);
-            if (routeColor == 0)
-                lineOptions.color(0xFF0A8F08);
-            else
-                lineOptions.color(routeColor);
         }
 
         // Drawing polyline in the Google Map for the i-th route

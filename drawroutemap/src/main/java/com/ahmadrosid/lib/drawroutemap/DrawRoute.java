@@ -23,9 +23,11 @@ import java.net.URL;
 public class DrawRoute extends AsyncTask<String, Void, String> {
 
     private GoogleMap mMap;
+    private int routeColor;
 
-    public DrawRoute(GoogleMap mMap) {
+    public DrawRoute(GoogleMap mMap, int routeColor) {
         this.mMap = mMap;
+        this.routeColor = routeColor;
     }
 
     @Override

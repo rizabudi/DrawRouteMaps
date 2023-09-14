@@ -32,7 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng origin = new LatLng(-7.788969, 110.338382);
         LatLng destination = new LatLng(-7.781200, 110.349709);
         DrawRouteMaps.getInstance(this)
-                .draw(origin, destination, mMap);
+                .draw(origin, destination, mMap, R.color.colorRouteLine);
         DrawMarker.getInstance(this).draw(mMap, origin, R.drawable.marker_a, "Origin Location");
         DrawMarker.getInstance(this).draw(mMap, destination, R.drawable.marker_b, "Destination Location");
 

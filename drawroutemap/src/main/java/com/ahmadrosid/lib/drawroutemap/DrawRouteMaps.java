@@ -19,6 +19,7 @@ public class DrawRouteMaps {
     private static DrawRouteMaps instance;
     private Context context;
     private static String API_KEY="";
+    private static int routeColor;
 
     public static DrawRouteMaps getInstance(Context context, String apiKey) {
         instance = new DrawRouteMaps();
@@ -27,9 +28,9 @@ public class DrawRouteMaps {
         return instance;
     }
 
-    public DrawRouteMaps draw(LatLng origin, LatLng destination, GoogleMap googleMap){
+    public DrawRouteMaps draw(LatLng origin, LatLng destination, GoogleMap googleMap, int routeColor){
         String url_route = FetchUrl.getUrl(origin, destination, API_KEY);
-        DrawRoute drawRoute = new DrawRoute(googleMap);
+        DrawRoute drawRoute = new DrawRoute(googleMap, routeColor);
         drawRoute.execute(url_route);
         return instance;
     }
